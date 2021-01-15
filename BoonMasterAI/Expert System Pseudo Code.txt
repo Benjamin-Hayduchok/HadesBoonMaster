@@ -1,0 +1,33 @@
+								Expert System Pseudo Code
+
+// Duo boon is also legendary boon, just different name but same process
+for item in inventoryList:	
+	boons = allItems[item] // allItems is a map, where key is boon, and value is array of array, where each index is a boon... 
+			       // boons is now an array in which each index is an array that holds a duo boons data. 
+			       // So each index is a boon that you can get from having that item
+
+	for boonData in boons: // boonData is an array, in which the first item is the name of the Duo boon
+			       // The rest of the data are required boons
+
+		boonName = boonData[0]
+		if boonName in inventoryList:
+			// If the duo Boon is already in inventory, continue the loop that checks the rest of boons related to that item
+			continue
+
+		for(int i = 1; i < boonData.length(); i++):
+			currRequiredBoon = boonData[i]
+			if currRequiredBoon in inventoryList: 
+				// By here, I know for certain I have chance to get duo boon, I have met all requirements
+				lookForDuo.append(boonName) // EX: Duo_Aph_Art_Heart_Rend								    				
+				break 
+	
+	
+// When complete...
+lookForDuo.sort(Comparator) // Based on how I set up
+
+for item in lookForDuo:
+	print("To get " + item + "... Find the Gods: " + item[4:7] + " or " item[8:11]) // value computed based on "Duo_Aph_Art_Heart_Rend"
+	// I will likely use item as key, and value as item description/image, etc.
+	// I will also likely use the keyword "Aph" "Art" "Pos" etc to get full names and pictures.
+
+// Likely do the same for "Look for these God's to get These Items to get a chance for duo boon + VALUE
